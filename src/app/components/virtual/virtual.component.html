@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 class="animate__animated animate__bounce">Virtual Scroll</h1>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary m-1" (click)='irFinal()'>
+                Final
+            </button>
+        </div>
+        <div class="col">
+            <button class="btn btn-warning m-1" (click)='irMitad()'>
+                Mitad
+            </button>
+        </div>
+        <div class="col text-end">
+            <button class="btn btn-secondary m-1 " (click)='irPrincipio()'>
+                Principio
+            </button>
+        </div>
+    </div>
+    <cdk-virtual-scroll-viewport itemSize='45' class="list-container list-group">
+
+        <div class="list-group-item animate__animated animate__bounceInRight" *cdkVirtualFor='let persona of personas; let i = index; let conteo = count'>
+            Item {{ i }} / {{ conteo }}
+        </div>
+
+
+    </cdk-virtual-scroll-viewport>
+</div>
